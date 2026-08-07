@@ -19,13 +19,16 @@ for l in file:
             startPos = startPos - 1
             if startPos == -1:
                 startPos = maxPos
+            if startPos == 0:
+                print("Zero here")
+                points += 1
     else:
         for i in range(num):
             startPos = startPos + 1
             if startPos == 100:
                 startPos = minPos
-    if startPos == 0:
-        print("Zero here")
-        points += 1
+            if startPos == 0:
+                print("Zero here")
+                points += 1
 
 print("Points:", points)
