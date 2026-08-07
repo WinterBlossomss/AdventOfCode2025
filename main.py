@@ -19,7 +19,12 @@ for l in numList:
             counter += 1
             count = len(str(counter))
             if count % 2 != 0:
-                continue
+                temp = list(map(int, str(counter)))
+                num = len(str(temp[0]))
+                # compare all list items
+                for i in range(num):
+                    for j in range(i + 1, num):
+                        compare(temp[i], temp[j])
             else:
                 temp = str(counter)
                 q, r = divmod(len(temp), 2)
@@ -28,3 +33,6 @@ for l in numList:
                     total += int(counter)
 
 print (total)
+
+def compare(num1, num2):
+    if num1 == num2:
