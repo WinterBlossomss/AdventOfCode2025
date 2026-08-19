@@ -25,32 +25,25 @@ def get_adjacent(arr, i, j):
         if is_paper(x, y, r, c):
             rolls.append(arr[x][y])
 
-
     return rolls
 
 
 total = 0
-temprollcount= 0
 field = []
 for l in file:
     row = list(l.rstrip("\n"))
     field.append(row)
-while True:
-    temprollcount = 0
-    for r, row in enumerate(field):
-        colnum = len(row)
-        for col in range(colnum):
-            elem = field[r][col]
-            if elem == "@":
-                adj = get_adjacent(field, r, col)
-                count = adj.count("@")
-                print("".join(map(str, adj)))
-                if count < 4:
-                    total += 1
-                    temprollcount += 1
-                    field[r][col] = "."
-    if temprollcount == 0:
-        break
+
+for r, row in enumerate(field):
+    colnum = len(row)
+    for col in range(colnum):
+        elem = field[r][col]
+        if elem == "@":
+            adj = get_adjacent(field, r, col)
+            count = adj.count("@")
+            print("".join(map(str, adj)))
+            if count < 4:
+                total += 1
 
 
 print(total)
