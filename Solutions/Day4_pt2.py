@@ -1,6 +1,6 @@
 file = open("adventofcode_secretentrance.txt", "r")
 
-def is_paper(x, y, r, c):
+def isValid(x, y, r, c):
     if x < 0 or y < 0 or x >= r or y >= c:
         return False
     return True
@@ -22,7 +22,7 @@ def get_adjacent(arr, i, j):
 
     for dx, dy in dirs:
         x, y = i + dx, j + dy
-        if is_paper(x, y, r, c):
+        if isValid(x, y, r, c):
             rolls.append(arr[x][y])
 
 
