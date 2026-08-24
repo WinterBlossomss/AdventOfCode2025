@@ -12,7 +12,7 @@ for i in range(len(coordinates)):
         x1, y1 = coordinates[i]
         x2, y2 = coordinates[j]
 
-        # Calculate absolute differences
+        # Calculate differences(+1 to include perimeter)
         width = abs(x2 - x1)+1
         height = abs(y2 - y1)+1
         area = width * height
